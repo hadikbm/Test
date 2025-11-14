@@ -4,44 +4,36 @@ public class H1_main {
 
 	public static void main(String[] args) {
 		
-double guthaben, monEingang;
-int rating;
-boolean warnhinweis = false, negativ = false;
-guthaben = -100;
-monEingang = 200;
-rating = -2;
+		int zone = 4;
+		double price;
+		price = 2;
 
-if (guthaben < 0) {
-	negativ = true;
-}
-else if (guthaben >= 0) {
-	negativ = false;
-}
-if (guthaben > 0 ) {
-	rating = rating + 3;
-}
-if (guthaben == 0) {
-	rating = rating + 2;
-}
-if (guthaben < 0 && Math.abs(monEingang) >= Math.abs(guthaben) ) {
-	rating = rating + 1;
-}
-if (guthaben < 0 && Math.abs(monEingang) < Math.abs(guthaben) ) {
-	rating = rating - 1;
-}
-if (guthaben < 0 && Math.abs(monEingang) < Math.abs(guthaben) && rating < 0 ) {
-	warnhinweis = true;
-}
-	else if(guthaben >= 0 && Math.abs(monEingang) >= Math.abs(guthaben) && rating >= 0)  {
-		warnhinweis = false;
-	}
-	
-System.out.println("Bewertung:");
-System.out.println(rating);
-System.out.println("Wahrnhinweis?");
-System.out.println(warnhinweis);
-System.out.println("Negatives Guthaben?");
-System.out.println(negativ);
+		switch(zone) {
+		case 1:
+		System.out.println("Ihre Fahrkarte kostet: " + price + "€");
+		break;
+		
+		case 2:
+		price = price + 0.35;	
+		System.out.println("Ihre Fahrkarte kostet: " + price + "€");
+		break;
+		
+		case 3,4:
+		price = price + 0.35 + 0.50;	
+		System.out.println("Ihre Fahrkarte kostet: " + price + "€");
+		break;
+		
+		case 5:
+		price = price + 0.35 + 0.50 + 0.70;	
+		System.out.println("Ihre Fahrkarte kostet: " + price + "€");
+		break;
+		
+		case 6:
+		price = 4.00;	
+		System.out.println("Ihre Fahrkarte kostet: " + price + "€");
+		break;	
+		}
 	}
 
 }
+//Hab das mit System.out.prtintln gemacht damit man das in der Konsole sieht falls das okay ist.
