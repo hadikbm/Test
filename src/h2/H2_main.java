@@ -3,72 +3,28 @@ package h2;
 public class H2_main {
 
 	public static void main(String[] args) {
-		boolean x,y,a,b,c;
-		int input;
-		
-		input = 0;
-		
-		x = true;
-		y = true;
-		a = true;
-		b =	true;
-		c = true;
-		x =! y;
-		
-		switch(input) {
-		
-		case 0:
-		x = false;
-		y = false;
-		break;
-		
-		case 1:
-		x = false;
-		y = true;
-		break;
-		
-		case 10:
-		x = true;
-		y = false;
-		break;
-		
-		case 11:
-		x = true;
-		y = true;
-		break;
-		
-		}
-		
-		if(x == true && y == true) {
-			a = true;
-			
-		} 
-		else a = false;
-		
-		if (x == true || x != y) {
-			b = true;
-		}
-		else b = false;
-		
-		if(x == true && y == true) {
-			c = false;
-		}
-		else if(x == true && y == false) {
-			c = true;
-		}
-		else if(x == false && y == true) {
-			c = false;
-		}
-		else if(x == false && y == false) {
-			c = true;
-		}
-		
-		
-		System.out.println("Wert von x: " + x);
-		System.out.println("Wert von y: " + y);
-		System.out.println("Wert von a: " + a);
-		System.out.println("Wert von b: " + b);
-		System.out.println("Wert von c: " + c);
+		 int n = 299;           
+	        int digits = 0;        
+	        int[] a = new int[9];  
+
+	        int temp = n;
+	        do {
+	            digits++;
+	            temp /= 10;
+	        } while (temp > 0);
+
+
+	        temp = n;
+	        for (int i = 8; i >= 0 && temp > 0; i--) {
+	            a[i] = temp % 10;
+	            temp /= 10;
+	        }
+
+
+	        System.out.print("Array: ");
+	        for (int value : a) {
+	            System.out.print(value + " ");
+	        }
 	}
 	}
 

@@ -3,15 +3,28 @@ package h3;
 public class H3_main {
 
 	public static void main(String[] args) {
-float celsiusFloat = 27 , fahrenheitFloat = 2;
-double celsiusDouble = 23, fahrenheitDouble = 4;
+		
+		int[][] einheiten = {
+	                {50000, 20000, 10000, 5000, 2000, 1000, 500, 200,
+	                 100, 50, 20, 10, 5, 2, 1},
+	                new int[15]
+	        };
 
+	        int input = 6279;  
 
-fahrenheitFloat = celsiusFloat * (float) 9/5 + 32;
-System.out.println(celsiusFloat + " Grad Celsius sind: " +fahrenheitFloat + " Grad Fahrenheit" );
+	        int rest = input;
 
-fahrenheitDouble = celsiusDouble * (double) 9/5 + 32;
-System.out.println(celsiusDouble + " Grad Celsius sind: " + fahrenheitDouble + " Grad Fahrenheit" );
+	        
+	        for (int i = 0; i < einheiten[0].length; i++) {
+	            int wert = einheiten[0][i];
+	            einheiten[1][i] = rest / wert;
+	            rest %= wert;
+	        }
+
+	        System.out.println("Zerlegung von " + input + " Cent:");
+	        for (int i = 0; i < einheiten[0].length; i++) {
+	            System.out.println(einheiten[0][i] + " Cent: " + einheiten[1][i] + "x");
+	        }
 	}
 
 }
