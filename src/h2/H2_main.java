@@ -2,30 +2,36 @@ package h2;
 
 public class H2_main {
 
-	public static void main(String[] args) {
-		 int n = 299;           
-	        int digits = 0;        
-	        int[] a = new int[9];  
+    public static void main(String[] args) {
 
-	        int temp = n;
-	        do {
-	            digits++;
-	            temp /= 10;
-	        } while (temp > 0);
+        int[] a = {1, 2, 3};
+        int[] b = {1, 2, 4};
+        int[] c = {1, 3, 2};
+        int[] d = {1, 2};
+        int[] e = {1, 2, 3};
 
+        System.out.println(compareArrays(a, b)); 
+        System.out.println(compareArrays(a, c)); 
+        System.out.println(compareArrays(a, d)); 
+        System.out.println(compareArrays(a, e)); 
+        System.out.println(compareArrays(e, a)); 
+    }
 
-	        temp = n;
-	        for (int i = 8; i >= 0 && temp > 0; i--) {
-	            a[i] = temp % 10;
-	            temp /= 10;
-	        }
+    public static boolean compareArrays(int[] a, int[] b) {
 
+        
+        if (a.length != b.length) {
+            return false;
+        }
 
-	        System.out.print("Array: ");
-	        for (int value : a) {
-	            System.out.print(value + " ");
-	        }
-	}
-	}
+        
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                return false;
+            }
+        }
 
+        return true; 
+    }			
+}
 

@@ -4,27 +4,43 @@ public class H3_main {
 
 	public static void main(String[] args) {
 		
-		int[][] einheiten = {
-	                {50000, 20000, 10000, 5000, 2000, 1000, 500, 200,
-	                 100, 50, 20, 10, 5, 2, 1},
-	                new int[15]
-	        };
+	        int[] a = {1, 2, 3};
+	        int[] b = {1, 2, 4};
+	        int[] c = {1, 3, 2};
+	        int[] d = {1, 2};
+	        int[] e = {1, 2, 3};
+	        int[] f = {1, 1, 2};
 
-	        int input = 6279;  
+	        System.out.println(compareArraysVal(a, b)); 
+	        System.out.println(compareArraysVal(a, c)); 
+	        System.out.println(compareArraysVal(a, d)); 
+	        System.out.println(compareArraysVal(a, e)); 
+	        System.out.println(compareArraysVal(a, f)); 
+	    }
 
-	        int rest = input;
+	    public static boolean compareArraysVal(int[] a, int[] b) {
 
-	        
-	        for (int i = 0; i < einheiten[0].length; i++) {
-	            int wert = einheiten[0][i];
-	            einheiten[1][i] = rest / wert;
-	            rest %= wert;
+	        if (a.length != b.length) {
+	            return false;
 	        }
 
-	        System.out.println("Zerlegung von " + input + " Cent:");
-	        for (int i = 0; i < einheiten[0].length; i++) {
-	            System.out.println(einheiten[0][i] + " Cent: " + einheiten[1][i] + "x");
+	        int[] countA = new int[1001];
+	        int[] countB = new int[1001];
+
+	        for (int x : a) {
+	            countA[x]++;
 	        }
+
+	        for (int x : b) {
+	            countB[x]++;
+	        }
+
+	        for (int i = 0; i < countA.length; i++) {
+	            if (countA[i] != countB[i]) {
+	                return false;
+	            }
+	        }
+
+	        return true;
+	    }
 	}
-
-}
