@@ -18,6 +18,5 @@ public class P33_main {
 		}
 		}
 		return max;
-		// alles falsch guck ddir die musterlösung Lösung an 
 	}
 }
